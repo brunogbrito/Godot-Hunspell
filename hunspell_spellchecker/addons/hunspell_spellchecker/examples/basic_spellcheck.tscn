@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlm6o4gbkn3fr"]
+
+[ext_resource type="Script" path="res://addons/hunspell_spellchecker/examples/basic_spellcheck.gd" id="1_4kk6b"]
+[ext_resource type="Script" path="res://addons/hunspell_spellchecker/nodes/hunspell_node.gd" id="2_kh0wt"]
+
+[node name="BasicSpellcheckExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kk6b")
+
+[node name="HunspellSpellchecker" type="Node" parent="."]
+script = ExtResource("2_kh0wt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Hunspell Spellchecker Example"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="InstructionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Enter a word to check its spelling:"
+horizontal_alignment = 1
+
+[node name="WordInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Type a word here..."
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CheckButton" type="Button" parent="VBoxContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Check Spelling"
+
+[node name="AddButton" type="Button" parent="VBoxContainer/ButtonsContainer"]
+layout_mode = 2
+disabled = true
+text = "Add to Dictionary"
+
+[node name="ClearButton" type="Button" parent="VBoxContainer/ButtonsContainer"]
+layout_mode = 2
+text = "Clear"
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="SuggestionsContainer" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="SuggestionsTitle" type="Label" parent="VBoxContainer/SuggestionsContainer"]
+layout_mode = 2
+text = "Spelling Suggestions:"
+horizontal_alignment = 1
+
+[node name="SuggestionsLabel" type="Label" parent="VBoxContainer/SuggestionsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[connection signal="text_submitted" from="VBoxContainer/WordInput" to="." method="_on_word_input_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/ClearButton" to="." method="_on_clear_button_pressed"]

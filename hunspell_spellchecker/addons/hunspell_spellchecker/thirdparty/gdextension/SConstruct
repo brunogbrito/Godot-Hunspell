@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+import os
+import sys
+
+# Get the absolute path to the current directory
+current_dir = os.getcwd()
+
+# Environment setup - relative path to godot-cpp
+# In the addon structure, godot-cpp should be in thirdparty/godot-cpp
+godot_cpp_path = os.path.join(current_dir, "thirdparty", "godot-cpp")
+env = SConscript(os.path.join(godot_cpp_path, "SConstruct"))
+
+# Set up extension specifics
+env.Append(CPPPATH=[
+    "src",
+    os.path.join(current_dir, "thirdparty", "hunspell", "src"),
+    os.path.join(current_dir, "thirdparty", "hunspell", "src", "hunspell")
+])
+
+# Add library path for Hunspell
+env.Append(LIBPATH=[
+    os.path.join(current_dir, "thirdparty", "hunspell", "msvc", "x64", "Release_dll")
+])
+
+env.Append(LIBS=["libhunspell"])
+
+# Sources for the extension
+sources = Glob("src/*.cpp")
+
+# Target path
+target_path = "bin/"
+
+# Compile the extension
+if env["platform"] == "macos":
+    library = env.SharedLibrary(
+        target_path + "libhunspell_gdextension.{}.{}.framework/libhunspell_gdextension.{}.{}".format(
+            env["platform"], env["target"], env["platform"], env["target"]
+        ),
+        source=sources,
+    )
+else:
+    library = env.SharedLibrary(
+        target_path + "libhunspell_gdextension{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        source=sources,
+    )
+
+Default(library)
