@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5r2xi6nnd28p"]
 
-[ext_resource type="Script" uid="uid://bqdr8dryyui1b" path="res://addons/example/hunspell_test.gd" id="1_a5n8s"]
+[ext_resource type="Script" uid="uid://bqdr8dryyui1b" path="res://addons/hunspell/example/hunspell_test.gd" id="1_a5n8s"]
 
 [node name="HunspellTest" type="Control"]
 layout_mode = 3
