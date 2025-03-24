@@ -61,7 +61,7 @@ The addon includes a simple test scene (`hunspell_test.tscn`) that demonstrates 
 
 ## License
 
-This addon is distributed under the MIT license. See the [[LICENSE](./LICENSE](https://github.com/brunogbrito/Godot-Hunspell?tab=MIT-1-ov-file)) file for more information.
+This addon is distributed under the MIT license. See the [LICENSE]((https://github.com/brunogbrito/Godot-Hunspell?tab=MIT-1-ov-file)) file for more information.
 
 The Hunspell library is distributed under a combination of licenses (GPL/LGPL/MPL). See the [Hunspell license](https://github.com/hunspell/hunspell/blob/master/license.hunspell) for more information.
 
