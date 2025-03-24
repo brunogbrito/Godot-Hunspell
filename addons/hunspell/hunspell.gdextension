@@ -1,0 +1,22 @@
+[configuration]
+
+entry_symbol = "hunspell_library_init"
+compatibility_minimum = "4.2"
+
+[libraries]
+
+windows.debug.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_release.x86_64.dll"
+linux.debug.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_release.x86_64.so"
+macos.debug = "res://addons/hunspell/bin/libhunspell.macos.template_debug.framework"
+macos.release = "res://addons/hunspell/bin/libhunspell.macos.template_release.framework"
+
+[dependencies]
+
+windows.debug.x86_64 = {}
+windows.release.x86_64 = {}
+linux.debug.x86_64 = {}
+linux.release.x86_64 = {}
+macos.debug = {}
+macos.release = {}

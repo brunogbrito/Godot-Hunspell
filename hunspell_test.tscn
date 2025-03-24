@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://hunspell_test.gd" id="1_a5n8s"]
+
+[node name="HunspellTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a5n8s")
+
+[node name="Panel" type="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="Title" type="Label"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Hunspell GDExtension Test"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator"]
+layout_mode = 2
+
+[node name="DictLabel" type="Label"]
+layout_mode = 2
+text = "Dictionary:"
+
+[node name="DictSelector" type="OptionButton"]
+layout_mode = 2
+
+[node name="DictStatus" type="Label"]
+layout_mode = 2
+text = "Status: No dictionary loaded"
+
+[node name="HSeparator2" type="HSeparator"]
+layout_mode = 2
+
+[node name="Label" type="Label"]
+layout_mode = 2
+text = "Enter a word to check:"
+
+[node name="HBox" type="HBoxContainer"]
+layout_mode = 2
+
+[node name="WordInput" type="LineEdit"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter word here..."
+
+[node name="CheckButton" type="Button"]
+layout_mode = 2
+text = "Check"
+
+[node name="ResultLabel" type="Label"]
+layout_mode = 2
+text = "Result will appear here"
+
+[node name="Label2" type="Label"]
+layout_mode = 2
+text = "Suggestions:"
+
+[node name="SuggestionsList" type="ItemList"]
+layout_mode = 2
+size_flags_vertical = 3
+auto_height = true
+
+[node name="HSeparator3" type="HSeparator"]
+layout_mode = 2
+
+[node name="Label3" type="Label"]
+layout_mode = 2
+text = "Log:"
+
+[node name="LogText" type="TextEdit"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "Log messages will appear here..."
+editable = false
+wrap_mode = 1
