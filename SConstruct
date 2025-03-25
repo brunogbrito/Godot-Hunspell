@@ -44,6 +44,13 @@ if env["platform"] == "windows":
     env.Append(CPPDEFINES=["NOMINMAX"])
     # Define NOMINMAX to avoid issues with Windows.h
 
+# Adjust flags for Linux
+if env["platform"] == "linux":
+    env.Append(CCFLAGS=["-fexceptions"])
+    # Enable exceptions
+    env.Append(CCFLAGS=["-DHUNSPELL_STATIC"])
+    # Static linking for Hunspell
+
 # Define our sources
 sources = Glob("src/*.cpp")
 

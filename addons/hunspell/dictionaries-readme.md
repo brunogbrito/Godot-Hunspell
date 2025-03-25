@@ -26,6 +26,18 @@ Both files must have the same base name, for example:
 2. Place them in this directory
 3. Restart your Godot project or reload the dictionaries
 
+## Important: Exporting Your Project
+
+When exporting your project, you must include these dictionary files by adding them to your export filters:
+
+1. Go to Project → Export → Resources → Filters to export non-resource files/folders
+2. Add the following pattern:
+   ```
+   addons/hunspell/dictionaries/*.aff,addons/hunspell/dictionaries/*.dic
+   ```
+
+Without this step, your exported game will not have access to the dictionaries, and spell checking will not work.
+
 ## Common Dictionary Names
 
 Here are some common dictionary file names:

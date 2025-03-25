@@ -31,6 +31,22 @@ A native spell-checking solution for Godot 4.4 using the [Hunspell](https://gith
    - Dictionary files can be found from [LibreOffice dictionaries](https://github.com/LibreOffice/dictionaries) or other sources
    - Each language typically requires two files: a `.aff` file and a `.dic` file with the same base name (e.g., `en_US.aff` and `en_US.dic`)
 
+## Exporting Your Project
+
+When exporting your project with this addon, you must add the dictionary files to the export filters:
+
+1. Go to Project → Export → Resources → Filters to export non-resource files/folders
+2. Add the following pattern to include all dictionary files:
+   ```
+   addons/hunspell/dictionaries/*.aff,addons/hunspell/dictionaries/*.dic
+   ```
+3. Alternatively, you can specifically include only the dictionaries you use:
+   ```
+   addons/hunspell/dictionaries/en_US.aff,addons/hunspell/dictionaries/en_US.dic
+   ```
+
+Without this step, dictionary files won't be included in your exported project, and spell checking will not function.
+
 ## Basic Usage
 
 ```gdscript
@@ -58,6 +74,12 @@ if success:
 ## Example Project
 
 The addon includes a simple test scene (`hunspell_test.tscn`) that demonstrates how to use the SpellChecker class. You can use this as a reference for implementing spell checking in your own projects.
+
+## Troubleshooting
+
+- **Dictionaries not found**: Make sure your dictionary files are placed in the `addons/hunspell/dictionaries/` folder and have the correct extensions (`.aff` and `.dic`).
+- **Spell checker not working in exports**: Check that you've added the dictionary files to your export filters as described in the "Exporting Your Project" section.
+- **Performance issues**: Consider loading dictionaries asynchronously or at application startup to avoid slowdowns during gameplay.
 
 ## License
 
