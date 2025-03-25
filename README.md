@@ -1,6 +1,6 @@
 # Hunspell GDExtension for Godot
 
-A native spell-checking solution for Godot 4.4 using the [Hunspell](https://github.com/hunspell/hunspell) library.
+A native spell-checking solution for Godot 4.4 using the [Hunspell](https://github.com/hunspell/hunspell) library. Hunspell is an open-source spell checker and morphological analyzer used in popular software like LibreOffice, Firefox, and Chrome. It supports numerous languages, handles complex morphology, and allows custom dictionaries through its flexible affix rules system.
 
 ## Features
 
