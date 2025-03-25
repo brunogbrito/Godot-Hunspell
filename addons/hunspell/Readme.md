@@ -1,4 +1,4 @@
-# Hunspell GDExtension for Godot 4.4
+# Hunspell GDExtension for Godot
 
 A native spell-checking solution for Godot 4.4 using the [Hunspell](https://github.com/hunspell/hunspell) library.
 
@@ -6,6 +6,7 @@ A native spell-checking solution for Godot 4.4 using the [Hunspell](https://gith
 
 - Fast, native spell-checking through Godot's GDExtension system
 - Support for multiple languages through standard Hunspell dictionaries
+- Supported platforms: Windows and Linux 
 - Easy-to-use API for spell checking and getting suggestions
 - Support for custom dictionaries (adding/removing words)
 
