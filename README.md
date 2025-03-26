@@ -12,7 +12,7 @@ A native spell-checking solution for Godot 4.4 using the [Hunspell](https://gith
 
 ## Installation
 
-### Method 1: Godot Asset Library (as soon it gets approved by the moderators)
+### Method 1: Godot Asset Library
 
 1. Open your Godot project
 2. Navigate to the AssetLib tab
