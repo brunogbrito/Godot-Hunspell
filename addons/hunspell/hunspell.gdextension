@@ -9,8 +9,8 @@ windows.debug.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_debu
 windows.release.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_release.x86_64.dll"
 linux.debug.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_debug.x86_64.so"
 linux.release.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_release.x86_64.so"
-macos.debug = "res://addons/hunspell/bin/libhunspell.macos.template_debug.framework"
-macos.release = "res://addons/hunspell/bin/libhunspell.macos.template_release.framework"
+macos.debug = "res://addons/hunspell/bin/libhunspell.macos.template_debug.universal.dylib"
+macos.release = "res://addons/hunspell/bin/libhunspell.macos.template_release.universal.dylib"
 
 [dependencies]
 
