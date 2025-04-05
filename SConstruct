@@ -50,6 +50,11 @@ if env["platform"] == "linux":
     # Enable exceptions
     env.Append(CCFLAGS=["-DHUNSPELL_STATIC"])
     # Static linking for Hunspell
+    
+# Adjust flags for macOS
+if env["platform"] == "macos":
+    env.Append(CCFLAGS=["-fexceptions"])
+    env.Append(CCFLAGS=["-DHUNSPELL_STATIC"])
 
 # Define our sources
 sources = Glob("src/*.cpp")
