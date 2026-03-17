@@ -1,6 +1,11 @@
 # Claude Code
 .claude/
 
+# Build dependencies (local only, not committed)
+emsdk/
+godot-cpp/
+hunspell/
+
 # Godot 4+ specific ignores
 .godot/
 

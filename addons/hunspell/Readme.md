@@ -4,7 +4,7 @@
  <img src="https://i.imgur.com/9egeCKq.png" width="1080" alt="Hunspell Spellchecker logo">
 </p>
 
-A native spell-checking solution for Godot 4.4 using the [Hunspell](https://github.com/hunspell/hunspell) library.
+A native spell-checking solution for Godot 4.6 using the [Hunspell](https://github.com/hunspell/hunspell) library.
 
 
 ## Features
