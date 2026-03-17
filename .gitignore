@@ -1,3 +1,6 @@
+# Claude Code
+.claude/
+
 # Godot 4+ specific ignores
 .godot/
 

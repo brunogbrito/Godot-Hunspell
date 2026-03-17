@@ -37,24 +37,23 @@ for path in potential_include_paths:
 
 # Adjust include and link flags for Windows
 if env["platform"] == "windows":
-    env.Append(CCFLAGS=["/EHsc", "/bigobj"])
-    # Enable exceptions
-    env.Append(CCFLAGS=["/DHUNSPELL_STATIC"])
-    # Static linking for Hunspell
-    env.Append(CPPDEFINES=["NOMINMAX"])
-    # Define NOMINMAX to avoid issues with Windows.h
+    if env.get("use_mingw", False):
+        # MinGW/GCC flags
+        env.Append(CCFLAGS=["-fexceptions"])
+    else:
+        # MSVC flags
+        env.Append(CCFLAGS=["/EHsc", "/bigobj"])
+    env.Append(CPPDEFINES=["HUNSPELL_STATIC", "NOMINMAX"])
 
 # Adjust flags for Linux
 if env["platform"] == "linux":
     env.Append(CCFLAGS=["-fexceptions"])
-    # Enable exceptions
-    env.Append(CCFLAGS=["-DHUNSPELL_STATIC"])
-    # Static linking for Hunspell
-    
+    env.Append(CPPDEFINES=["HUNSPELL_STATIC"])
+
 # Adjust flags for macOS
 if env["platform"] == "macos":
     env.Append(CCFLAGS=["-fexceptions"])
-    env.Append(CCFLAGS=["-DHUNSPELL_STATIC"])
+    env.Append(CPPDEFINES=["HUNSPELL_STATIC"])
 
 # Define our sources
 sources = Glob("src/*.cpp")

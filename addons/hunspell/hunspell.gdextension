@@ -7,6 +7,8 @@ compatibility_minimum = "4.2"
 
 windows.debug.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_debug.x86_64.dll"
 windows.release.x86_64 = "res://addons/hunspell/bin/hunspell.windows.template_release.x86_64.dll"
+windows.debug.arm64 = "res://addons/hunspell/bin/hunspell.windows.template_debug.arm64.dll"
+windows.release.arm64 = "res://addons/hunspell/bin/hunspell.windows.template_release.arm64.dll"
 linux.debug.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_debug.x86_64.so"
 linux.release.x86_64 = "res://addons/hunspell/bin/libhunspell.linux.template_release.x86_64.so"
 macos.debug = "res://addons/hunspell/bin/libhunspell.macos.template_debug.universal.dylib"
@@ -16,6 +18,8 @@ macos.release = "res://addons/hunspell/bin/libhunspell.macos.template_release.un
 
 windows.debug.x86_64 = {}
 windows.release.x86_64 = {}
+windows.debug.arm64 = {}
+windows.release.arm64 = {}
 linux.debug.x86_64 = {}
 linux.release.x86_64 = {}
 macos.debug = {}
